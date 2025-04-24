@@ -63,3 +63,4 @@ def promt(message):
         error_msg = f"Ошибка при запросе к Yandex GPT: {str(e)}"
         logger.error(error_msg)
         return error_msg
+
