@@ -4,24 +4,7 @@ from logger import setup_logger
 
 logger = setup_logger()
 
-
 def promt(message):
-    """
-    Отправляет запрос к Yandex GPT API и возвращает очищенный ответ.
-
-    Формирует структурированный запрос к Yandex GPT API, отправляет его, обрабатывает ответ
-    и возвращает очищенный от специальных символов текст.
-
-    Args:
-        message (str): Текст сообщения пользователя, которое будет отправлено в API.
-
-    Returns:
-        str: Очищенный ответ от Yandex GPT или сообщение об ошибке в случае неудачи.
-
-    Raises:
-        Exception: Логирует ошибки, связанные с запросом к API, но не пробрасывает их выше,
-                  вместо этого возвращает строку с описанием ошибки.
-    """
     prompt = {
         "modelUri": f"gpt://{Settings.FOLDER_ID}/yandexgpt-lite",
         "completionOptions": {
@@ -63,4 +46,3 @@ def promt(message):
         error_msg = f"Ошибка при запросе к Yandex GPT: {str(e)}"
         logger.error(error_msg)
         return error_msg
-
