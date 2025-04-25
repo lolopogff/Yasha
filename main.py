@@ -53,7 +53,7 @@ def do_this_command(message):
         None
     """
     message = message.lower()
-    if message == "пока":
+    if message in Info.CONCLUDING_PHRASES:
         say_message("Пока! До новых встреч!")
         exit()
 
