@@ -6,6 +6,8 @@ class Info:
     - DESCRIPTION (описание, то что используем для инструкции модели)
     - VOICE (голос, список голосов (ru, M):
      filipp, ermil, zahar, alexander, kirill, anton, madi_ru)
+    - CONCLUDING_PHRASES (фразы, для завершения диалога)
+    - VOICE_STYLE (стиль голоса)
     """
     NAME = "Яша"
     DESCRIPTION = (
@@ -19,6 +21,8 @@ class Info:
     )
     VOICE = "kirill"
     CONCLUDING_PHRASES = ["пока", "до свидания", "до новых встреч", "прощай", "всего доброго", "увидимся"]
+    STOP_PHRASES = ["стоп", "хватит", "прекрати", "остановись"]
+    VOICE_STYLE = "good"
 
 
 class Settings:
@@ -28,5 +32,3 @@ class Settings:
     FOLDER_ID = "b1gv4c52iaki869acqjb"
     API_KEY = "AQVN00Kh_26JTJUCXCJ7AMjj49QuaRrFRelpISkt"
     IAM_TOKEN = "AQVN0tNAgGOR7JkXS8s95SW2-qFUgWHVn5PEp9Jz"
-
-# ограничить промт до 3 предложений, сдлеать стоп слово
