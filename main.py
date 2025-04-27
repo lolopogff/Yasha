@@ -74,12 +74,11 @@ def say_message(message):
     def listen_for_stop():
         nonlocal interrupted
         with sr.Microphone() as source:
-            r.pause_threshold = 0.8  # Увеличиваем паузу перед завершением фразы
-            r.energy_threshold = 4000  # Порог чувствительности к громкости (экспериментально)
-            r.dynamic_energy_threshold = False  # Фиксируем порог
+            r.pause_threshold = 0.8
+            r.energy_threshold = 4000
+            r.dynamic_energy_threshold = False
 
             try:
-                # Увеличиваем время прослушивания и снижаем фоновый шум
                 print("Ожидание стоп-слова...")
                 audio = r.listen(source, timeout=3, phrase_time_limit=2)
                 speech = r.recognize_google(audio, language='ru-RU').lower()
@@ -94,10 +93,9 @@ def say_message(message):
             except Exception as e:
                 logger.error(f"Ошибка при прослушивании: {str(e)}")
 
-    # Проверяем стоп-слова чаще и с перезапуском прослушивания
     while mixer.music.get_busy() and not interrupted:
         listen_for_stop()
-        time.sleep(0.1)  # Короткая пауза между проверками
+        time.sleep(0.1)
 
     logger.info(f"Ассистент ответил: {message}")
     print(f"{Info.NAME}: {message}")
