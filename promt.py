@@ -4,6 +4,7 @@ from logger import setup_logger
 
 logger = setup_logger()
 
+
 def promt(message):
     prompt = {
         "modelUri": f"gpt://{Settings.FOLDER_ID}/yandexgpt-lite",

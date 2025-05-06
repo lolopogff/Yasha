@@ -30,11 +30,11 @@ def listen_command(timeout=None):
         except sr.WaitTimeoutError:
             return None
         except sr.UnknownValueError:
-            error_msg = "Ошибка распознавания речи"
+            error_msg = "Не расслышал вас, повторите пожалуйста"
             logger.error(error_msg)
             return error_msg
         except sr.RequestError:
-            error_msg = "Ошибка сервиса распознавания речи"
+            error_msg = "Не расслышал вас, повторите пожалуйста"
             logger.error(error_msg)
             return error_msg
 
